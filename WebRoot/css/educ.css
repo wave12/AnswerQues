@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+.OneClass
+{
+	padding-left:0px;
+	padding-top:0px;
+	padding-bottom:5px;
+	width:640px;
+	float:left;
+}
+
+.ClassListLeft {float:left; width:650px; text-align:left}
+.ClassListRight {float:right; width:300px; }
+
+.ONC_Img
+{ 
+	float:left;
+}
+
+.ONC_Text
+{
+	float:right;
+	width:470px;
+	padding-left:5px;
+}
+
+.ONC_Text_Title
+{
+	font-size:10.5pt;
+	font-weight:bold;
+	padding-bottom:5px;
+}
+
+.ONC_Text_Con
+{
+	line-height:150%;
+	padding-top:10px;
+}
+
+.ONC_Text_Info
+{
+	padding-top:10px;
+}

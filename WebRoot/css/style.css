@@ -1,0 +1,505 @@
+﻿@CHARSET "UTF-8";
+
+body
+{
+	margin: 0 auto;
+	padding:0px;
+	font-family:微软雅黑,Trebuchets MS,Verdana,黑体,华文细黑;
+	font-size:9.5pt;
+	color:#353535;
+	text-align:center;
+} 
+
+img {padding:0px;border:0px;margin:0px;}
+
+a:link {color:#353535;text-decoration: none;}
+a:visited {color:#353535;text-decoration: none;}
+a:hover {color:#ff3535;text-decoration: none;}
+a:active {color:#ff3535;text-decoration: none;} 
+
+a.ClassLink:link {color:#fafafa;text-decoration: none; font-size:9pt;}
+a.ClassLink:visited {color:#fafafa;text-decoration: none;}
+a.ClassLink:hover {color:#ff3535;text-decoration:underline;}
+a.ClassLink:active {color:#ff3535;text-decoration: underline;}
+
+a.BlueLink:link {color:#66f;text-decoration: none; font-size:9pt;}
+a.BlueLink:visited {color:#66f;text-decoration: none;}
+a.BlueLink:hover {color:#ff3535;text-decoration:underline;}
+a.BlueLink:active {color:#ff3535;text-decoration: underline;}
+
+a.RecordLink:link {color:#0a0a6a;text-decoration: none; font-size:10.5pt;}
+a.RecordLink:visited {color:#1a1a8a;text-decoration: none;}
+a.RecordLink:hover {color:#ff3535;text-decoration:underline;}
+a.RecordLink:active {color:#ff3535;text-decoration: underline;}
+
+/* 解决chrome浏览器历史选择后出现的淡黄色背景 */
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.SortNo
+{
+	border:solid 1px #999999;
+	font-size:8pt;
+	color:#999; 
+	text-align:center;
+	padding:0px 2px 0px 2px;
+	height:20px;
+	line-height:20px;
+	margin-right:5px;
+	margin-top:2px; 
+	float:left;
+	clear:both;
+}
+
+.Container
+{
+	margin: 0 auto;
+	width:960px;
+	clear:both;
+	text-align:left;
+}
+
+.Log
+{
+	padding-right:100px;
+	float:left;
+}
+
+.RegLogin
+{
+	float:right;
+	line-height:74px; 
+	height:74px;
+	font-size:10pt;	
+}
+
+.CateRow
+{
+	height: 53px;
+	background-image: url(../images/CateBg.png);
+	clear:both;
+	margin-bottom:0px;
+}
+
+.CateRow ul {
+	display: block;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	text-align:center;	
+}
+.CateRow li {display: block;float: left;height: 53px;width:110px;}
+.CateRow li span{float: left; }
+
+.CateRow li a {display: block;font: bold 11pt Verdana,Tahoma,'Microsoft Yahei','Simsun';height:49px;text-decoration: none;width:110px;line-height: 49px;float: left;color: #ffffff;}
+.CateRow li a:hover {
+background: url(../images/ActiveCateBg.png?20131127_02) ;color: #ffffff;display: block;font-size:14px/17px;text-decoration: none;width: 110px;}
+.CateRow li a:visited {
+ color: #ffffff;display: block; }
+
+.CateTitle
+{
+	text-align:left;
+	font-size:10.5pt;	
+	padding-left:15px;
+	line-height:36px;
+	height:38px;	
+	background-image: url(../images/CateHeadBg.png);
+	font-weight:bold;
+}
+ 
+.CateList ul
+{
+	display: block;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+.CateList ul li
+{
+	line-height:26px; 
+}
+
+.Sep2
+{	
+	height:2px;
+	clear:both;
+}
+
+.Sep5
+{
+	height:5px;
+	clear:both;
+}
+
+.Sep8
+{
+	height:8px;
+	clear:both;
+}
+
+.BottomRow
+{
+	background-color:#eaeaea;
+	height:200px;
+	clear:both;
+	padding-top:10px;
+}
+
+.BottomListHeadImage
+{
+	margin-bottom:15px;
+}
+
+.BottomSep
+{
+	float:left;
+	width:20px;
+}
+
+.BottomLog{float:left; width:145px;margin-top:40px;}
+
+.BottomAddress{ line-height:180%;margin-top:20px; text-align:left; float:left;}
+
+.BottomRow ul {
+	display: block;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+.BottomLeft
+{
+	float:left;
+	width:330px;
+}
+
+.BottomRight
+{
+	float:left;
+	width:530px; 
+}
+
+.BottomList
+{
+	float:left;
+	margin-top:10px;
+	line-height:22px;
+	width:100px;
+}
+
+.NormalItemList
+{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	line-height:26px;
+	height:26px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.S_Title
+{
+	background-color:#fafafa;
+	height:28px;
+	line-height:28px;
+	padding-left:15px;
+	clear:both;
+}
+
+.ItemDt
+{
+	float:right;
+	font-size:8pt;
+	color:#999;	
+}
+
+.OneTitle
+{
+	width:200px;
+	float:left;
+	text-overflow:ellipsis;/*当文本溢出时显示…*/
+    white-space:nowrap;/*表示文本不会换行*/
+    overflow:hidden;/*表示溢出的内容会被隐藏*/
+}
+
+.NavArea {font-size:9pt; padding-top:10px; padding-bottom:5px;border-bottom:1px solid #e5e5e5; text-align:left;}
+
+.XuLine2
+{
+	clear: both;
+	background-image: url(../images/XuLine.png);
+	background-repeat: repeat-x;
+	height: 15px;
+	background-position: center;
+}
+
+.DetailLink
+{
+	padding-left:10px;
+	padding-top:10px;
+}
+
+.pageInfoArea
+{
+	padding-top:10px;
+    padding-bottom:50px; 
+    text-align:left;
+    margin-right:15px;
+    margin-left:15px;
+}
+
+.pageInfoArea span
+{
+    border:1px solid #ddd;
+    padding:3px;
+}
+
+.pageInfoArea a:link {font-size:9.5pt;TEXT-DECORATION: none;color: #0F8ECD;}
+.pageInfoArea a:visited {font-size:9.5pt;COLOR: #0F8ECD; TEXT-DECORATION: none}
+.pageInfoArea a:hover {font-size:9.5pt;COLOR: #ED0000; TEXT-DECORATION:none}
+.pageInfoArea a:active {font-size:9.5pt;COLOR: #ED0000; TEXT-DECORATION: none}
+
+.curPage
+{
+    background-color:#3366ff;
+    color:White;
+}
+
+.Content
+{
+	font-size:10pt;
+	padding-top:20px;
+	padding-bottom:50px;
+	text-align:left;
+	line-height:180%;
+}
+
+.TitleLine
+{
+    height:1px;
+    background-color:#f2f2f2;	
+}
+
+.SubMenuLine
+{
+    height:1px;
+    background-color:#f2f2f2;	
+}
+
+.SubMenuRow
+{
+	height:32px;
+	border-bottom:1px solid #f2f2f2;
+}
+
+.MenuActive
+{ 
+    background-color: #4AACFF;
+    float:left;
+    height:32px;
+    color:white;     
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:0px;
+    padding-bottom:0px;   
+    line-height:32px; 
+    min-width:80px;
+    text-align:center;
+    margin-right:2px;
+    
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-left-radius:5px;
+    -moz-border-top-right-radius:5px;   
+     
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+        
+.MenuNoActive
+{ 
+    background-color: #EFEFEF;
+    float:left;
+    height:32px;
+    color:#3f3f3f;     
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:0px;
+    padding-bottom:0px;   
+    line-height:32px; 
+    min-width:80px;
+    text-align:center;
+    margin-right:2px;
+    
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-left-radius:5px;
+    -moz-border-top-right-radius:5px;   
+     
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.MenuNoActive:hover
+{
+    background-color: #E7E7E7;  
+    cursor: pointer;
+}
+
+.note {
+	padding-left:5px;
+	color:#6f6f6f;
+}
+
+.errNote {
+	color:#f00;
+	float:left;
+	padding-left:70px;
+}
+
+.formSingleRow {
+	height:22px;
+	line-height:22px;
+	float:left;
+	clear:both;
+	padding-bottom:5px;
+}
+
+.formMulRow {
+	float:left;
+	clear:both;
+	padding-bottom:5px;
+}
+
+.formRowLable {
+	float:left;
+    height:26px;
+    width:120px;
+    text-align:right;
+    padding-right:5px;
+}
+
+.formRowContent {
+	float:left;
+    height:26px;   
+    font-size:12pt;
+}
+
+.inputRow {
+	height:22px;
+	line-height:22px;
+	border:1px solid #CCCCCC;
+	float:left; 
+}
+
+.inputRowReadOnly {
+	background-color: #E7E7E7;  
+	height:22px;
+	line-height:22px;
+	border:1px solid #CCCCCC;
+}
+
+.formSubmitRow {
+	height:34px;
+	float:left;
+	clear:both;
+	padding-bottom:50px;
+}
+
+.payPrice{width:150px; font-size:16pt; color:#ED0E40; font-family:Constantia; 
+	padding-left:5px;}
+
+.btnSubmit { 
+	margin-top:10px;
+	margin-bottom:5px;
+	height:34px;
+	width:80px;
+	font-size:12pt;
+	color:#339;
+	font-family:微软雅黑,Trebuchets MS,Verdana,黑体,华文细黑;
+	font-weight:bold;
+	float:left; 
+}
+
+.LightGrayBorder{ border:1px solid #E5E5E5; }
+
+.runningTip {
+	padding-top:25px;
+	font-size:12pt;
+	padding-bottom:15px;
+	font-family:微软雅黑,Trebuchets MS,Verdana,黑体,华文细黑;
+}
+.runningOk {
+	padding-top:5px;
+	font-size:10.5pt;
+	height:30px;
+	line-height:30px;
+	padding-bottom:25px;
+}
+#mask {
+    display: none;  
+    background: #d9d9d9;   
+    position: fixed; left: 0; top: 0;   
+    z-index: 10;  
+    width: 100%; height: 100%;  
+    opacity: 0.8;  
+    z-index: 999;  
+} 
+
+.titleLine {
+	width:100%;
+	height:1px;
+	border-bottom:1px solid #e5e5e5;
+}
+
+.AskUI {right:0px; top:250px; position: fixed; z-index: 100; opacity:0.9}
+
+.AskFrameMid {
+	background-image: url(../images/zixun_head2.png?888);
+	background-repeat: repeat-y;
+	height:24px;
+	line-height:24px;
+}
+
+.mustItem {
+	color:red;
+}
+ 
+.NormalFormRow {
+	height:28px;
+	line-height:28px;
+}
+
+.NormalFormInput {
+	border:1px solid #f3f3f3;
+	height:24px;
+	line-height:24px;
+}
+ 
+
+.NormalConRowLabel {
+	float:left;
+	width:90px;
+	text-align:right;
+}
+.NormalConInputArea {
+	float:left;
+}
+
+.btnSubmit {
+	margin-top:10px;
+	margin-bottom:5px;
+	height:34px;
+	width:80px;
+	font-size:12pt;
+	color:#339;
+	font-family:微软雅黑,Trebuchets MS,Verdana,黑体,华文细黑;
+	font-weight:bold;
+	float:left;
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+   <package name="default" extends="struts-default, json-default">
+     <action name="login" class="com.crab.action.UserInfoAction" method="index">
+         <result name="suc">/user_center/login.jsp</result>
+     </action>
+     <action name="register" class="com.crab.action.UserInfoAction" method="index">
+         <result name="suc">/user_center/register.jsp</result> 
+     </action>  
+     <action name="news" class="com.crab.action.NewsInfoAction" method="index">
+         <result name="suc">/newsinfo/index.jsp</result>
+     </action>
+     <action name="client" class="com.crab.action.NewsInfoAction" method="getClientNews">
+         <result name="suc">/client/index.jsp</result>
+     </action>
+      <action name="news_*" class="com.crab.action.NewsInfoAction" method="{1}">
+         <result name="suc">/adminc19/news_{1}.jsp</result>
+     </action>
+      <action name="DoNewsAddEdit" class="com.crab.action.NewsInfoAction" method="doAddEdit">
+         <result name="suc">/adminc19/news_addEdit.jsp</result>
+      </action>
+     
+      <action name="class_list" class="com.crab.action.DocInfoAction" method="class_list">
+         <result name="suc">/educ/index.jsp</result>
+     </action>
+      
+      <action name="doc" class="com.crab.action.DocInfoAction" method="index">
+         <result name="suc">/docinfo/index.jsp</result>
+     </action>
+      <action name="docdetail" class="com.crab.action.DocInfoAction" method="detailUI">
+         <result name="suc">/docinfo/detail.jsp</result>
+     </action>
+     <action name="mydoc" class="com.crab.action.DocInfoAction" method="myDoc">
+         <result name="suc">/user_center/mydoc.jsp</result>
+     </action>
+      <action name="myclass" class="com.crab.action.DocInfoAction" method="myClass">
+         <result name="suc">/user_center/myclass.jsp</result>
+     </action>
+     <action name="classaddedit" class="com.crab.action.DocInfoAction" method="class_detail">
+         <result name="suc">/user_center/myclass_addedit.jsp</result>
+     </action>
+      <action name="classinfo" class="com.crab.action.DocInfoAction" method="class_detail">
+         <result name="suc">/educ/class_detail.jsp</result>
+     </action>
+     <action name="docaddedit" class="com.crab.action.DocInfoAction" method="detail">
+         <result name="suc">/user_center/mydoc_addedit.jsp</result>
+     </action>
+     <action name="DoDocAddEdit" class="com.crab.action.DocInfoAction" method="addedit">
+         <result name="suc">/user_center/mydoc_addedit.jsp</result>
+     </action>
+     <action name="DoClassAddEdit" class="com.crab.action.DocInfoAction" method="class_addedit">
+         <result name="suc">/user_center/myclass_addedit.jsp</result>
+     </action>
+     
+      <action name="aboutus2" class="com.crab.action.PageInfoAction" method="index">
+         <result name="suc">/aboutus/index.jsp</result>
+     </action>
+      <action name="pageinfo235" class="com.crab.action.PageInfoAction" method="index">
+         <result name="suc">/adminc19/pageMan3452.jsp</result>
+     </action>
+     <action name="doPageInfo" class="com.crab.action.PageInfoAction" method="update">
+         <result name="suc">/adminc19/pageMan3452.jsp</result>
+     </action>
+     <action name="newsdetail" class="com.crab.action.NewsInfoAction" method="detail">
+         <result name="suc">/newsinfo/detail.jsp</result>
+     </action>
+      <action name="productdetail" class="com.crab.action.ProductInfoAction" method="detail">
+         <result name="suc">/product/detail.jsp</result>
+     </action>
+     
+     <action name="productinfo234" class="com.crab.action.ProductInfoAction" method="detail">
+         <result name="suc">/adminc19/productMan3247.jsp</result>
+     </action>
+     <action name="doProductInfo" class="com.crab.action.ProductInfoAction" method="update">
+         <result name="suc">/adminc19/productMan3247.jsp</result>
+     </action>
+     <action name="updateSubCate" class="com.crab.action.ProductInfoAction" method="subCateDetail">
+         <result name="suc">/adminc19/subCateHeadMan2346.jsp</result>
+     </action>
+     <action name="doUpdateSubCate" class="com.crab.action.ProductInfoAction" method="updateSubCate">
+         <result name="suc">/adminc19/subCateHeadMan2346.jsp</result>
+     </action>
+     <action name="doUserReg" class="com.crab.action.UserInfoAction" method="reg">
+         <result name="suc">/usercenter/index.jsp</result>
+     </action>
+     <action name="usercenter" class="com.crab.action.UserInfoAction" method="login">
+         <result name="err">/user_center/login.jsp</result>
+         <result name="suc">/user_center/index.jsp</result>
+     </action>
+     <action name="usercenter_*" class="com.crab.action.UserInfoAction" method="{1}">
+         <result name="err">/user_center/login.jsp</result>
+         <result name="suc">/user_center/{1}.jsp</result>
+     </action>    
+      <action name="paycart" class="com.crab.action.UserInfoAction" method="paycart">
+         <result name="suc">/alipay/index.jsp</result>
+     </action> 
+      <action name="return_url" class="com.crab.action.UserInfoAction" method="HandleReturnURL">
+         <result name="suc">/alipay/return_url.jsp</result>
+     </action>       
+     <action name="doRegister" class="com.crab.action.UserInfoAction" method="reg">
+         <result name="err">/user_center/register.jsp</result>
+         <result name="suc">/user_center/index.jsp</result>
+     </action>    
+     
+     <action name="askpro" class="com.crab.action.AskProAction" method="index">
+         <result name="suc">/askpro_f/index.jsp</result>
+     </action>
+     <action name="askpro_detail" class="com.crab.action.AskProAction" method="detail">
+         <result name="suc">/askpro_f/detail.jsp</result>
+     </action>
+      <action name="askpro_close" class="com.crab.action.AskProAction" method="close">
+         <result name="suc">/askpro_f/close_question.jsp</result>
+     </action>
+     
+     <action name="*JsonAction" class="com.crab.action.JsonAction" method="{1}">
+         <result type="json">
+              <param name="root">result</param>
+         </result>
+     </action>
+    </package>
+</struts>    

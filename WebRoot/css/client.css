@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+
+.ClientBanner
+{
+	background-color:#f3f3f3;
+	height:350px;
+}
+
+.ClientBannerLeft
+{
+	float:left;
+	width:350px;
+	height:100%;
+}
+
+.ClientBannerRight
+{
+	float:right;
+	padding-top:20px;
+	padding-right:50px;
+}
+
+.ClientTitle
+{
+	padding-top:50px;
+	font-size:18pt;
+	padding-bottom:10px;
+	font-weight:580;
+}
+
+.ClientSentence
+{
+	padding-top:10px; 
+	padding-bottom:10px;
+	font-size:10.5pt;
+}
+
+.VersionRow
+{	
+	background-color:#e1e1e1;
+	height:70px;
+}
+
+.Version
+{
+	height:70px;
+	line-height:70px; 
+	float:left;
+	width:120px;
+	text-align:right; 
+}
+
+.Download
+{
+	padding-left:10px
+	float:left;
+}
+
+.LastNews
+{
+	font-size:11pt;
+	font-weight:700;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.NewsItemsArea
+{
+	padding-bottom:20px;
+}
+
+.NewsItemsArea ul
+{
+	display: block;
+	list-style-type: disc;
+	margin:0;
+	padding:0;
+}
+
+.NewsRow
+{
+	height:26px;
+	line-height:26px;
+	text-align:left;
+}
+
+.NewsTitle
+{
+	font-size:10.5pt;
+	padding-right:10px;
+}
+
+.NewsDt
+{
+	font-size:9pt;
+}

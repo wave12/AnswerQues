@@ -1,0 +1,8 @@
+cp -r /home/uftp/Crab/* /etc/tomcat8/webapps/ROOT/
+
+
+这是php时代的RSA公匙
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjcMtY8UOYeQH4s9YCqnrkV0nS
+vXR8AggmNzW5694nMfuLzCKvd160y+TgCPr0LIBxLkrtjb/KqsIHQo3hVgcR4rRj
+ONH5PhWRNqreEX+s0ZSgbdDRKEcqKneGfsYvQdSdo+qIX2rRMszO4rtYcoJh6hCz
+yDIvSsJ8UgGWjF6E2wIDAQAB

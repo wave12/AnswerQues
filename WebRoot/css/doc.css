@@ -1,0 +1,98 @@
+
+.DocListLeft
+{
+	float:left;
+	width:660px;
+	text-align:left;
+}
+
+.DocListLeft ul
+{
+	display: block;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+.DocListRight
+{
+	float:right;
+	width:300px; 
+}
+
+.DocRow
+{
+	height:26px;
+	line-height:26px;
+	text-align:left;
+}
+
+.DocTitle
+{
+	font-size:10.5pt;
+	padding-right:10px;
+}
+
+.DocDt
+{
+	font-size:9pt;
+}
+
+.DocBigTitle
+{
+	font-size:15pt;
+	font-weight:bold;
+	padding-top:20px;
+	padding-bottom:5px;
+}
+
+.DocInfoRow
+{
+	padding-top:10px;
+	padding-bottom:20px;
+	color:#888;
+	height:30px;
+	line-height:30px;
+}
+
+.DocInfoRow img
+{ 
+	vertical-align:middle;
+}
+
+.DocAuthor, .DocComeFrom, .DocPriceInfo{
+    color:#33a;	
+    padding-right:15px;
+}
+
+.DocPrice
+{
+	color:#a33;	
+}
+
+.ClassMainImg{float:left;width:250px;}
+.ClassMainImgSelf{width:250px;}
+.ClassMainIntro{float:left;width:690px;  line-height:26px; padding-left:20px;}
+.ClassTitle{font-size:20pt; color:#363636; padding-top:15px; padding-bottom:10px;}
+.GrayLine{height:1px; border-top:solid 1px #cdcdcd; padding-top:3px; padding-bottom:3px;}
+.ItemLabel{color:#696969; line-height:24px; height:24px; width:100px }
+.ClassPrimaryCon{ padding-bottom:20px; margin-left:30px; line-height:150%; height:90px;}
+.ClassPrice{width:150px; font-size:16pt; color:#ED0E40; font-family:Constantia; 
+	padding-left:5px;}
+.ClassName {
+	font-size:15pt; color:#363636; padding-top:15px; padding-bottom:10px;
+}
+.ClassNameRow {
+	height:36px;
+	line-height:36px;
+}
+.JoinStudyRow {
+	height:36px;
+	line-height:36px;
+}
+	
+.CateCon{line-height:180%; padding-left:10px; padding-right:10px; padding-top:8px; padding-bottom:8px; vertical-align:top;}
+
+.IconOrderDoc {
+	padding-left:5px;
+}

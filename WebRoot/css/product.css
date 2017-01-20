@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+
+.OneProductArea
+{
+	font-size:10.5pt;
+	min-height:200px;
+	text-align:left;
+	padding-bottom:20px;
+}
+
+.ProductTitle
+{
+	font-size:14pt;
+	font-weight:bold;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.ProductBigTitle
+{
+	font-size:14pt;
+	font-weight:bold;
+	padding-bottom:10px;
+	padding-top:30px;
+}
+
+.ProductDescribe
+{
+	padding-left:10px;
+	padding-right:10px;
+	font-size:10.5pt;
+}

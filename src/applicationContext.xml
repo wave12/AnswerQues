@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+	 http://www.springframework.org/schema/aop 
+	 http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+	 http://www.springframework.org/schema/tx 
+	 http://www.springframework.org/schema/tx/spring-tx.xsd" 
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url"
+			value="jdbc:mysql://120.76.243.109:3306/crab_dev?characterEncoding=utf-8">
+		</property>
+		<property name="username" value="crab_test2"></property>
+		<property name="password" value="crab_test2_35"></property>
+		<property name="driverClassName"  value="com.mysql.jdbc.Driver"/> 
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.autoReconnect">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/crab/entity/CbAdmUser.hbm.xml</value>
+				<value>com/crab/entity/CbNewsInfo.hbm.xml</value>
+				<value>com/crab/entity/CbUser.hbm.xml</value>
+				<value>com/crab/entity/CbDoc.hbm.xml</value>
+				<value>com/crab/entity/CbClass.hbm.xml</value>
+				<value>com/crab/entity/CbDocDiscuss.hbm.xml</value>
+				<value>com/crab/entity/CbPageInfo.hbm.xml</value>
+				<value>com/crab/entity/CbProduct.hbm.xml</value>
+				<value>com/crab/entity/CbSubCate.hbm.xml</value>
+				<value>com/crab/entity/CbSucCateRecord.hbm.xml</value>
+				<value>com/crab/entity/CbCartDetail.hbm.xml</value>
+				<value>com/crab/entity/CbCart.hbm.xml</value>
+				<value>com/crab/entity/CbAnswer.hbm.xml</value>
+				<value>com/crab/entity/CbQuestion.hbm.xml</value></list>
+		</property></bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	<bean id="askProAction" class="com.crab.action.AskProAction" scope="prototype">
+	     <property name="askProBiz" ref="askProBiz" />
+	</bean>
+	<bean id="askProBiz" class="com.crab.biz.AskProBiz">
+	    <property name="askProDAO" ref="askProDAO" />
+	</bean>
+	<bean id="askProDAO" class="com.crab.dao.AskProDAO">
+	    <property name="sessionFactory" ref="sessionFactory" />
+	</bean>	
+	
+	
+	<!-- 定义事务通知  -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+	    <tx:attributes>
+	        <tx:method name="*" propagation="REQUIRED" />
+	    </tx:attributes>
+	</tx:advice>
+	
+	<!-- 定义切面，并将事务通知和切面组合（定义哪些方法应用事务规则 -->
+	<aop:config>
+	    <aop:pointcut id="bizMethods" expression="execution(* com.crab.biz.*.*(..))" />
+	    <aop:advisor advice-ref="txAdvice" pointcut-ref="bizMethods" />
+	</aop:config>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" /></beans>

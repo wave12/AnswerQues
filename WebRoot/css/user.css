@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+.FormArea{
+   padding-top:20px;	
+}
+
+.FormArea table
+{
+	line-height:180%;
+	
+} 
+
+.inputRow
+{
+	line-height:26px;
+	height:26px;	
+	margin-top:5px;
+	margin-bottom:5px;
+} 
+ 
+.label
+{
+	display:inline-block;
+	width:120px;
+	font-size:10pt;
+	color:#6f6f6f;
+	text-align:right;
+	height:28px;
+	padding-right:5px;
+}
+
+.btnReg {
+	margin-top:10px;
+	height:40px;
+	width:80px;
+	font-size:12pt;
+	color:#339;
+	font-family:微软雅黑,Trebuchets MS,Verdana,黑体,华文细黑;
+	font-weight:bold;
+}
+
+
+

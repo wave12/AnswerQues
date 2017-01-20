@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.AboutUsList
+{
+	float:left;
+	width:180px;
+	border:1px solid #E2E2E2;
+	margin-right:10px;
+	font-size:10.5pt;
+	margin-top:10px;
+}
+
+.AboutUsContent
+{
+	float:left; 
+	text-align:left;
+	width:760px;
+	line-height:180%;
+}
