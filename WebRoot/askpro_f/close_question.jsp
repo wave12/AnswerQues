@@ -55,7 +55,46 @@ img.intLink { border: 0;  }
   </head>
   
   <script type="text/javascript">
-     var g_cartID = "";
+     var g_cartID  = "";
+     function CloseHandle() {
+     	var total_pay = 0;
+     	var inputs = document.getElementsByName("input");
+	    for(var i=0; i<inputs.length; i++) {
+	    	var pay = inputs[i].value;
+			if(pay != "") {
+				total_pay += parseInt(pay);
+		    }
+	    }
+    	if(${questionInfo.price} < total_pay) {
+    		alert("当前报酬不足！");
+    	}else if(${questionInfo.price} > total_pay){
+    		alert("当前报酬仍有剩余！！");
+    	}else {
+    		alert("正在提交数据");
+    	}
+    	total_pay = 0;
+     }
+     //数据验证处理
+     function DataVal() {
+	 	var inputs = document.getElementsByName("input");
+	    for(var i=0; i<inputs.length; i++) {
+	    	var pay = inputs[i].value;
+			if(pay != ""){
+				var patten = /^-?\d+$/;  
+				if(!patten.test(pay)){
+					alert("金额应为整数！");
+					inputs[i].focus();				
+					return;
+				}
+				if(pay <= 0) {
+					alert("最少为1元");
+					inputs[i].focus();
+					return;
+				}
+			}
+	    }
+    }
+    
     function AnswerQuestion(id) {
 		var uid = $('#userID').val();
 		if (uid == '') {
@@ -196,7 +235,7 @@ img.intLink { border: 0;  }
 		                   <td class="AskProCon" valign="top">
 		                     <div class="QuestionInfo">
 		                        <div class="DtAnswer">回复时间：${obj.dt}</div>	
-		                         <div class="GivePay">报酬：<input class="InputPay" id="pay" /></div>	                       
+		                         <div class="GivePay">报酬：<input class="InputPay" id="pay" name="input" onblur="DataVal()" /></div>	                       
 		                     </div>
 		                     <div>${obj.con}</div>
 		                   </td>
