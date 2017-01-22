@@ -110,9 +110,7 @@
      <action name="askpro_detail" class="com.crab.action.AskProAction" method="detail">
          <result name="suc">/askpro_f/detail.jsp</result>
      </action>
-      <action name="askpro_close" class="com.crab.action.AskProAction" method="close">
-         <result name="suc">/askpro_f/close_question.jsp</result>
-     </action>
+    
      
      <action name="*JsonAction" class="com.crab.action.JsonAction" method="{1}">
          <result type="json">
@@ -120,4 +118,20 @@
          </result>
      </action>
     </package>
+    
+     <package namespace="/askpro" name="askpro" extends="struts-default, json-default">
+	     <action name="ttt2" class="com.crab.action.AskProAction" method="myquestion">
+	         <result name="suc">/askpro_f/myquestion.jsp</result>
+	     </action>
+	     <action   name="close" class="com.crab.action.AskProAction"  method="close"> 
+	        <result name="suc">/askpro_f/close_question.jsp</result> 
+	     </action>
+	     <action   name="joinQuestion" class="com.crab.action.AskProAction"  method="join_question"> 
+	        <result name="suc">/askpro_f/join_question.jsp</result> 
+	     </action>
+	      <action name="closeQuestion" class="com.crab.action.AskProAction" method="close">
+	         <result name="suc">/askpro_f/close_question.jsp</result>
+	      </action>
+    </package>
+    
 </struts>    

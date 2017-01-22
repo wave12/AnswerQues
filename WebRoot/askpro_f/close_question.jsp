@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <style type="text/css">
 .intLink { cursor: pointer; }
-img.intLink { border: 0; }
+img.intLink { border: 0;  }
 #toolBar1 select { font-size:10px; }
 #textBox {
   width: 540px;

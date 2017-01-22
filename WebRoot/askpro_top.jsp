@@ -18,6 +18,43 @@
     </div>
 </div>
 
+	<div id="dialog" style="display: none;z-index: 99999;"  title="用户登陆">
+	   		            
+		            
+		           	<div class="FormSingleRow">
+		           	  <div style="width:250px; margin-left:30px;" class="InputOutFrame">
+		           	     <span style="float:left;vertical-align:middle"><img style="vertical-align:top" src="<%=path%>/images/ico_user.gif"/></span>
+		           	     <span style="float:left;"><input  placeholder="邮箱或手机" onblur="lostFocus('userName')" onkeydown="doKeydown('userName')"  type="text" class="inputRegRow" id="userName"  name="userName"  
+			           	     <s:if test = 'userName != ""'>value="${userName}"</s:if> 
+			           	     />
+		           	     </span>
+		           	  </div>
+		           	</div> 
+			        <div class="FormTipRow">
+			             <span style="display:none" id="userNameErr" class="errNote">用户名不能为空！</span>
+			        </div> 
+			        <div class="FormSingleRow">
+                         <div style="width:250px; margin-left:30px;" class="InputOutFrame">
+		           	         <span style="float:left;"><img style="vertical-align:top" src="<%=path%>/images/ico_pass.gif"/></span>
+		           	         <span style="float:left;margin:auto 0"><input  placeholder="登陆密码"  onblur="lostFocus('pass')"   onkeydown="doKeydown('pass')"  type="password" class="inputRegRow"  type="password" id="pass"  name="pass" />
+		           	         </span>
+		           	    </div>
+                    </div> 
+			        <div class="FormTipRow">
+			           <span style="display:none"  id="passErr"  class="errNote">密码不能为空！</span>
+			        </div> 
+			        <div class="FormSingleRow">
+			             <div style="width:150px; margin-left:30px; float:left" class="InputOutFrame">
+			                <span><input placeholder="验证码" style="width:150px;"  onblur="lostFocus('code')"  onkeydown="doKeydown('code')"    type="text" class="inputRegRow"  id="code"  name="code" value="" /></span>
+			             </div>
+			              <span style="float:left" class="ValidateCode"><img style="padding-top:2px" src="<%=path%>/user_center/v_code.jsp" /></span>
+			        </div>
+			        <div class="FormTipRow"><span class="NormalLabel">&nbsp;</span><span style="display:none"  id="codeErr"  class="errNote">验证码不正确</span></div> 
+			        <div class="FormSingleRow"><span class="NormalLabel">&nbsp;</span><span><input onclick="check()" type="button" id="btnReg" class="btnReg" value="登录" /></span></div>
+		            <div class="FormSingleRow"><span class="NormalLabel">&nbsp;</span><span style="float:left;text-align:left;">还没有十二维账号，马上<a class="BlueLink" href="<%=request.getContextPath()%>/register">注册</a></span></div> 
+		  
+	</div>
+
 <div class="DlgPopup" id="dlgQuestion" style="display: none;z-index: 99999; text-align:left;  "  title="提问">
 
        <div class="NormalFormRow">
