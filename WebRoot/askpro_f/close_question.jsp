@@ -56,35 +56,49 @@ img.intLink { border: 0;  }
   
   <script type="text/javascript">
      var g_cartID  = "";
-     function HideTxt(userID,objID) {
-     	var userId = document.getElementById("userID");
-     	alert(userID);
-    /* 	var inputs = document.getElementsByClassName("GivePay");
-     	for(var i=0; i<inputs.length; i++) {
-	     	if(objId == userId)
-	     		inputs[i].style.display = "none";
-     	}*/
-     }
-     function CloseHandle() {
+     var idInfo = new Array();
+     var count = 0; 
+     function CloseHandle(questionID,questionTitle) {
      	var total_pay = 0;
-     	var inputs = document.getElementsByName("input");
+     	var payInfo = "";
+     	var inputs    = document.getElementsByName("input");
 	    for(var i=0; i<inputs.length; i++) {
 	    	var pay = inputs[i].value;
 			if(pay != "") {
 				total_pay += parseInt(pay);
+				payInfo += idInfo[i] + "|" + pay + ";";
 		    }
 	    }
+	    payInfo = questionID + "|" + questionTitle + "|" + total_pay + ";" + payInfo;
+			//	alert(payInfo);
     	if(${questionInfo.price} < total_pay) {
     		alert("超过总金额！");
     	}else if(${questionInfo.price} > total_pay){
     		alert("当前报酬仍有剩余！！");
     	}else {
-    		alert("正在提交数据");
+    		$.ajax({
+				type:"post",
+				url:"PayQuestionJsonAction",
+				data:payInfo,
+				dataType:"json",
+				success:function(data){	  			  			 
+				  			if (data != null) { 
+				  			    alert('结算成功！');  
+				  			}
+				  			else {    	  			      
+				  				alert('结算失败,请稍后再试!');
+				  			}	  			
+				  		},
+				  		error:function() {
+				  		    alert('系统异常，请稍后再试!');
+				  		}
+			});
     	}
     	total_pay = 0;
      }
      //数据验证处理
-     function DataVal() {
+     function DataVal(id) {
+     	idInfo[count++] = id;
 	 	var inputs = document.getElementsByName("input");
 	    for(var i=0; i<inputs.length; i++) {
 	    	var pay = inputs[i].value;
@@ -244,7 +258,9 @@ img.intLink { border: 0;  }
 		                   <td class="AskProCon" valign="top">
 		                     <div class="QuestionInfo">
 		                        <div class="DtAnswer">回复时间：${obj.dt}</div>	
-		                         <div class="GivePay"><script>HideTxt(userID,${obj.cbUser.id})</script>报酬：<input class="InputPay" id="pay" name="input" onblur="DataVal()" /></div>	                       
+		                         <s:if test="%{#obj.cbUser.id!=#request.questionInfo.cbUser.id}">
+		                         	<div class="GivePay" >报酬：<input class="InputPay" id="pay" name="input" onblur="DataVal(${obj.cbUser.id})" /></div>
+		                         </s:if>	                       
 		                     </div>
 		                     <div>${obj.con}</div>
 		                   </td>
@@ -254,7 +270,7 @@ img.intLink { border: 0;  }
 		          </s:iterator>		      	   	 
 	         </div>
 	         
-	         <div><input id="CloseConfirm" class="btnPay" onclick="CloseHandle()"   type="Button"  value="结    算" /></div>
+	         <div><input id="CloseConfirm" class="btnPay" onclick="CloseHandle('${questionInfo.cbUser.id}','${questionInfo.questionTitle }')"   type="Button"  value="结    算" /></div>
 		
 	          
 	  </div>
