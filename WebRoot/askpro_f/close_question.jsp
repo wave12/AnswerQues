@@ -56,6 +56,15 @@ img.intLink { border: 0;  }
   
   <script type="text/javascript">
      var g_cartID  = "";
+     function HideTxt(userID,objID) {
+     	var userId = document.getElementById("userID");
+     	alert(userID);
+    /* 	var inputs = document.getElementsByClassName("GivePay");
+     	for(var i=0; i<inputs.length; i++) {
+	     	if(objId == userId)
+	     		inputs[i].style.display = "none";
+     	}*/
+     }
      function CloseHandle() {
      	var total_pay = 0;
      	var inputs = document.getElementsByName("input");
@@ -66,7 +75,7 @@ img.intLink { border: 0;  }
 		    }
 	    }
     	if(${questionInfo.price} < total_pay) {
-    		alert("当前报酬不足！");
+    		alert("超过总金额！");
     	}else if(${questionInfo.price} > total_pay){
     		alert("当前报酬仍有剩余！！");
     	}else {
@@ -235,7 +244,7 @@ img.intLink { border: 0;  }
 		                   <td class="AskProCon" valign="top">
 		                     <div class="QuestionInfo">
 		                        <div class="DtAnswer">回复时间：${obj.dt}</div>	
-		                         <div class="GivePay">报酬：<input class="InputPay" id="pay" name="input" onblur="DataVal()" /></div>	                       
+		                         <div class="GivePay"><script>HideTxt(userID,${obj.cbUser.id})</script>报酬：<input class="InputPay" id="pay" name="input" onblur="DataVal()" /></div>	                       
 		                     </div>
 		                     <div>${obj.con}</div>
 		                   </td>
