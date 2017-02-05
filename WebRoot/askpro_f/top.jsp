@@ -2,14 +2,19 @@
 	<div class="Container">
 	   <span class="Log"><img src="<%=request.getContextPath()%>/images/logo.png" /></span>
 	   <span class="LogS"><img src="<%=path%>/images/logo_askpro.png?343" /></span>
-	   <span class="RegLogin">
+	   <div class="RegLogin">
 	       <s:if test="#session.admin != null">
-	           <span class="UserHead"><img src="<%=path%>/images/user_head.png" /></span><s:property value="#session.admin.substring(#session.admin.indexOf('|')+1)"/></span>
+	          <table cellpadding="0" cellspacing="0" border="0" height="100%" style="float:left;">
+	             <tr>
+	                <td class="UserHead"><img style="vertical-align: middle;" src="<%=path%>/images/user_head.png" /></td>
+	                <td class="UserHeadNick"><s:property value="#session.admin.substring(#session.admin.indexOf('|')+1)"/></td>
+	             </tr>
+	         </table>	          
 	       </s:if>
 	       <s:if test="#session.admin == null">
-	           <span><a href="<%=request.getContextPath()%>/register">注册</a></span>&nbsp;&nbsp;<span><a href="<%=request.getContextPath()%>/login">登陆</a></span>
+	           <div><a href="<%=request.getContextPath()%>/register">注册</a></span>&nbsp;&nbsp;<span><a href="<%=request.getContextPath()%>/login">登陆</a></div>
 	   	   </s:if>
-	   </span>    
+	   </div>    
 	</div>
 </div>
 

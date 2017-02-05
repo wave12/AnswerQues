@@ -5,10 +5,11 @@
 	vertical-align:middle; 
 	padding-top:18px;
 }
-
-.UserHead { 
-	 padding-right:5px; margin-top:27px; float:left;
-	 	}
+	 	
+.UserHead {
+	padding-top:1px;
+	padding-right:5px; 
+}
 
 .FrameSearch {
 	height:28px;
