@@ -39,6 +39,13 @@ select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
+ul{
+	display: block;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+} 
+
 .SortNo
 {
 	border:solid 1px #999999;
@@ -64,8 +71,9 @@ select:-webkit-autofill {
 
 .Log
 {
-	padding-right:100px;
+	padding-right:5px;
 	float:left;
+	width:188px;
 }
 
 .RegLogin
@@ -73,7 +81,7 @@ select:-webkit-autofill {
 	float:right;
 	line-height:74px; 
 	height:74px;
-	font-size:10pt;	
+	font-size:10pt;	 
 }
 
 .CateRow
@@ -503,3 +511,4 @@ background: url(../images/ActiveCateBg.png?20131127_02) ;color: #ffffff;display:
 	font-weight:bold;
 	float:left;
 }
+ 

@@ -1,12 +1,22 @@
 @CHARSET "UTF-8";
 
+.LogS {
+	float:left;
+	vertical-align:middle; 
+	padding-top:18px;
+}
+
+.UserHead { 
+	 padding-right:5px; margin-top:27px; float:left;
+	 	}
+
 .FrameSearch {
 	height:28px;
 	line-height:28px;
 	float:left; 
 	margin-top:10px;
 	width:250px; 
-	margin-left:30px;
+	margin-left:0px;
 	outline:none;
 	border-left:1px solid #AD1E08;
 	border-top:1px solid #AD1E08;
@@ -52,7 +62,7 @@
     color:#333;
     background-color:#EAEAEB;
     margin-top:13px;
-    margin-left:380px;
+    margin-left:580px;
     padding:2px;
     width:50px;
     float:left;
@@ -188,7 +198,6 @@
 	width:220px;  
 	color:#999;
 	font-size:9pt;
-	float:left;
 }
 
 .HeadImageArea {
@@ -261,7 +270,17 @@
     background-color:#9999ff;
 }
 
- 
+
+.BtnPayHandle {
+	-webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius: 3px;
+    border:1px solid #f3f3f3;
+    font-size:9pt;
+    padding:2px 4px 2px 4px;
+    color:#fff;
+    background-color:#4AACFF;
+}
 
 .DlgPopup {width:700px;}
 

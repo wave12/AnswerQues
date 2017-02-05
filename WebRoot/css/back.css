@@ -406,3 +406,14 @@
 .smalltitle {
 	height:25px;line-height:25px;display:block;color:#333;margin:5px auto 0;
 }
+
+.BtnHandle {
+	-webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius: 3px;
+    border:1px solid #f3f3f3;
+    font-size:9pt;
+    padding:2px 4px 2px 4px;
+    color:#fff;
+    background-color:#4AACFF;
+}
