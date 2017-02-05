@@ -20,8 +20,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible"content="IE=edge"/>
 	
-	<link rel="stylesheet" type="text/css" href="<%=path%>/css/style.css?435435333">
-    <link rel="stylesheet" type="text/css" href="<%=path%>/css/askpro.css?20170119_1">
+	<link rel="stylesheet" type="text/css" href="<%=path%>/css/style.css?43543533335">
+    <link rel="stylesheet" type="text/css" href="<%=path%>/css/askpro.css?20170205_10">
     <link rel="stylesheet" type="text/css" href="<%=path%>/css/jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" href="<%=path%>/css/wave12Editor.css?33356">
 
@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-     <%@ include file="../askpro_top.jsp"%>
+     <%@ include file="./top.jsp"%>
     <div class="Sep8"></div>
 	<div class="Container">
 
@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 
 		  <s:iterator id="obj" value="#request.askProList">
 			    
-			     <div class="QuestionListTitle"><a href="askpro_detail?id=${obj.id}">${obj.questionTitle}</a></div>
+			     <div class="QuestionListTitle"><a href="detail?id=${obj.id}">${obj.questionTitle}</a></div>
 			     <div class="QuestionExInfo">		
 			        <div style="float:left"><img class="HeadImage2" src="${obj.cbUser.bbsheadIcon}" /></div>             
 					<div style="float:left" class="Questioner"> ${obj.cbUser.userName}</div>
