@@ -4,12 +4,11 @@
 	   <span class="LogS"><img src="<%=path%>/images/logo_askpro.png?343" /></span>
 	   <div class="RegLogin">
 	       <s:if test="#session.admin != null">
-	          <table cellpadding="0" cellspacing="0" border="0" height="100%" style="float:left;">
-	             <tr>
-	                <td class="UserHead"><img style="vertical-align: middle;" src="<%=path%>/images/user_head.png" /></td>
-	                <td class="UserHeadNick"><s:property value="#session.admin.substring(#session.admin.indexOf('|')+1)"/></td>
-	             </tr>
-	         </table>	          
+	        <div class="UserHeadArea">
+	          <div class="UserHead"><img style="vertical-align: middle;" src="<%=path%>/images/user_head.png" />
+	          		<span class="UserHeadNick"><s:property value="#session.admin.substring(#session.admin.indexOf('|')+1)"/></span>
+	          </div>
+	        </div>            
 	       </s:if>
 	       <s:if test="#session.admin == null">
 	           <div><a href="<%=request.getContextPath()%>/register">注册</a></span>&nbsp;&nbsp;<span><a href="<%=request.getContextPath()%>/login">登陆</a></div>

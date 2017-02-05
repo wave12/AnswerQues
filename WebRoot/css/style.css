@@ -84,6 +84,15 @@ ul{
 	font-size:10pt;	 
 }
 
+.UserHeadArea {float:left;}
+.UserHead {
+	padding-top:0px;
+	padding-right:5px;  
+	height:74px;
+	line-height:74px;
+}
+.UserHeadNick {font-size:10pt;}
+
 .CateRow
 {
 	height: 53px;
