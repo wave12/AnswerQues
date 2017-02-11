@@ -32,6 +32,9 @@ public class CbUser implements java.io.Serializable {
 	private Integer status;
 	private String acCode;
 	private String myClass;
+	private float mon;
+	
+
 	private Set cbDocs = new HashSet(0);
 
 	// Constructors
@@ -242,5 +245,15 @@ public class CbUser implements java.io.Serializable {
 	public void setCbDocs(Set cbDocs) {
 		this.cbDocs = cbDocs;
 	}
+	
+	public float getMon() {
+		return this.mon;
+	}
+
+	public void setMon(float mon) {
+		this.mon = mon;
+	}
+
+
 
 }
