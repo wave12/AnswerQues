@@ -3,6 +3,7 @@ package com.crab.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.MatchMode;
@@ -10,6 +11,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import com.crab.entity.CbAnswer;
+import com.crab.entity.CbCartDetail;
 import com.crab.entity.CbDoc;
 import com.crab.entity.CbQuestion;
 import com.crab.entity.CbUser;
@@ -113,4 +115,30 @@ public class AskProDAO implements IAskProDAO {
 		return iRet;
 	 }
 
+	@Override
+	public Integer PayQuestionMon(String id, float price) {
+		Session se = sessionFactory.getCurrentSession();
+		String sql = "update CbUser set mon='" + price + "' where id='" + id + "'" ;
+		int iRet = 1;
+		try {
+			SQLQuery query = se.createSQLQuery(sql);
+			iRet = query.executeUpdate();
+		} catch (Exception e) {
+			iRet = 0;
+			e.printStackTrace();
+		}
+		return iRet;
+	} 
+	@Override
+	public Integer PayQuestion(CbCartDetail cartDetail) {
+		Session se = sessionFactory.getCurrentSession();
+		int iRet = 1;
+		try {
+			se.saveOrUpdate(cartDetail);
+		}catch(Exception e) {
+			e.printStackTrace();
+			iRet = 0;
+		}
+		return iRet;
+	}
 }

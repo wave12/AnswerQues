@@ -116,5 +116,14 @@ public class UserInfoDAO implements IUserInfoDAO {
 		
 		return bRet;
 	}
-
+	
+	@Override
+	public float GetMonById(String id) {
+		float mon = 0;
+		Session se = sessionFactory.getCurrentSession();
+		Criteria c = se.createCriteria(CbUser.class);
+		c.add(Restrictions.eq("id", id));
+		mon = ((CbUser)c.list().get(0)).getMon();
+		return mon;
+	}
 }
