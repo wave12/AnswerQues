@@ -53,4 +53,10 @@ public class UserInfoBiz implements IUserInfoBiz {
     	boolean bRet = userInfoDAO.UpdateCartStatus(cart);
     	return bRet;
     }
+    
+    @Override
+    public float GetMonById(String id) {
+    	float mon = userInfoDAO.GetMonById(id);
+    	return mon;
+    }
 }

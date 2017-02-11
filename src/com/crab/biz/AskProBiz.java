@@ -13,7 +13,9 @@ import java.util.UUID;
 import org.apache.commons.lang.xwork.StringEscapeUtils;
 
 import com.crab.dao.IAskProDAO;
+import com.crab.dao.IUserInfoDAO;
 import com.crab.entity.CbAnswer;
+import com.crab.entity.CbCartDetail;
 import com.crab.entity.CbQuestion;
 import com.crab.entity.CbUser;
 import com.crab.entity.Pager;
@@ -22,6 +24,10 @@ public class AskProBiz implements IAskProBiz {
 	IAskProDAO  askProDAO;
 	public void setAskProDAO(IAskProDAO askProDAO){
 		this.askProDAO = askProDAO;
+	}
+	IUserInfoDAO userInfoDAO;
+	public void setUserDAO(IUserInfoDAO userInfoDAO){
+		this.userInfoDAO = userInfoDAO;
 	}
 	
 	@Override
@@ -128,5 +134,30 @@ public class AskProBiz implements IAskProBiz {
 		return askProDAO.getQuestionCountByCondition(condition);
 	}
 	
+	@Override
+	public boolean PayQuestionMon(String id, float price) {
+		float mon = userInfoDAO.GetMonById(id);
+		if(mon >= -price) {
+			//与数据库层交互更新id用户的mon值，字段Mon
+			askProDAO.PayQuestionMon(id, mon+price);
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int PayQuestion(String userID, String cardID, String questionTitle, float price) {
+		String productName = price + ":{" + questionTitle;
+		if(productName.length() > 100) {
+			productName = productName.substring(0, 98);
+		}
+		productName += "}";
+		CbCartDetail cartDetail = new CbCartDetail();
+		cartDetail.setCartId(cardID);
+		cartDetail.setProductName(productName);
+		cartDetail.setPrice(price);
+		askProDAO.PayQuestion(cartDetail);
+		return 0;
+	}
 	
 }

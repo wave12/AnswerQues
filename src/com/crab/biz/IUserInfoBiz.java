@@ -13,4 +13,5 @@ public interface IUserInfoBiz {
 	public CbCart GetCartInfoById(String id);
 	public List<CbCartDetail> GetCartDetailInfoByCartId(String cartId);
 	public boolean UpdateCartStatus(CbCart cart);
+	public float GetMonById(String id);
 }

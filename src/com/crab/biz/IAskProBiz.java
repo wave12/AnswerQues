@@ -11,5 +11,7 @@ public interface IAskProBiz {
 	public CbQuestion getQuestionInfoByID(String id);
 	public int AnswerQuestion(String userID, String questionID, String con);
 	public int MakeOneQestion(String userID, String questionTitle, float price, String con);
-	
+	//ÐÂÌí
+	public boolean PayQuestionMon(String id, float price); 
+	public int PayQuestion(String userID, String cardID, String questionTitle, float price);
 }
