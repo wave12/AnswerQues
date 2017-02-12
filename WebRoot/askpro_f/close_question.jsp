@@ -79,7 +79,9 @@ img.intLink { border: 0;  }
     		$.ajax({
 				type:"post",
 				url:"PayQuestionJsonAction",
-				data:payInfo,
+				data:{
+					payInfos:payInfo
+				},
 				dataType:"json",
 				success:function(data){	  			  			 
 				  			if (data != null) { 
