@@ -67,7 +67,9 @@
 	<bean id="askProDAO" class="com.crab.dao.AskProDAO">
 	    <property name="sessionFactory" ref="sessionFactory" />
 	</bean>	
-	
+	<bean id="userInfoDAO" class="com.crab.dao.UserInfoDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 	
 	<!-- 定义事务通知  -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
